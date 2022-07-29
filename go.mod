@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/Logiase/MiraiGo-Template v0.0.0-20201001114637-94652842a78d
 	github.com/Mrs4s/MiraiGo v0.0.0-20201002095327-2050e4566494
-	github.com/go-co-op/gocron v1.13.0
+	github.com/go-co-op/gocron v1.15.1
 )
 
 require (
@@ -28,7 +28,7 @@ require (
 	github.com/tidwall/match v1.0.1 // indirect
 	github.com/tidwall/pretty v1.0.2 // indirect
 	github.com/yinghau76/go-ascii-art v0.0.0-20190517192627-e7f465a30189 // indirect
-	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
+	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4 // indirect
 	golang.org/x/sys v0.0.0-20200929083018-4d22bbb62b3c // indirect
 	golang.org/x/text v0.3.3 // indirect
 	google.golang.org/protobuf v1.25.0 // indirect
