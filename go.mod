@@ -1,4 +1,4 @@
-module github.com/aimerneige/MiraiGo-module-morning
+module github.com/yukichan-bot-module/MiraiGo-module-morning
 
 go 1.15
 
