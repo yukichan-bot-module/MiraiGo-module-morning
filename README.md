@@ -1,6 +1,6 @@
 # MiraiGo-module-morning
 
-ID: aimerneige.test.morning
+ID: `com.aimerneige.morning`
 
 Module for [MiraiGo-Template](https://github.com/Logiase/MiraiGo-Template)
 
@@ -18,10 +18,20 @@ package example
 imports (
     // ...
 
-    _ "github.com/aimerneige/MiraiGo-module-morning"
+    _ "github.com/yukichan-bot-module/MiraiGo-module-morning"
 
     // ...
 )
 
 // ...
+```
+
+如果需要，在全局配置文件中填入如下配置过滤指定的群聊：
+
+```yaml
+aimerneige:
+  morning:
+    ignored:
+      - 519821281
+      - 982715633
 ```

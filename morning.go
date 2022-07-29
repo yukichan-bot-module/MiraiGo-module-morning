@@ -5,13 +5,15 @@ import (
 	"time"
 
 	"github.com/Logiase/MiraiGo-Template/bot"
+	"github.com/Logiase/MiraiGo-Template/config"
 	"github.com/Logiase/MiraiGo-Template/utils"
 	"github.com/Mrs4s/MiraiGo/message"
 	"github.com/go-co-op/gocron"
 )
 
 var instance *morning
-var logger = utils.GetModuleLogger("internal.logging")
+var logger = utils.GetModuleLogger("com.aimerneige.morning")
+var ignoredGroup []int64
 
 type morning struct {
 }
@@ -23,7 +25,7 @@ func init() {
 
 func (m *morning) MiraiGoModule() bot.ModuleInfo {
 	return bot.ModuleInfo{
-		ID:       "aimerneige.test.morning",
+		ID:       "com.aimerneige.morning",
 		Instance: instance,
 	}
 }
@@ -32,6 +34,10 @@ func (m *morning) MiraiGoModule() bot.ModuleInfo {
 // 在此处可以进行 Module 的初始化配置
 // 如配置读取
 func (m *morning) Init() {
+	ignoredList := config.GlobalConfig.GetIntSlice("aimerneige.morning.ignored")
+	for _, groupID := range ignoredList {
+		ignoredGroup = append(ignoredGroup, int64(groupID))
+	}
 }
 
 // PostInit 第二次初始化
