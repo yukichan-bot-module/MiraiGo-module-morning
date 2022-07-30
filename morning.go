@@ -53,6 +53,9 @@ func (m *morning) Serve(b *bot.Bot) {
 	s.Every(1).Day().At("00:00").Do(func() {
 		groupList := b.GroupList
 		for _, group := range groupList {
+			if isIgnoredGroup(group.Uin) {
+				continue
+			}
 			b.SendGroupMessage(group.Code, msg)
 		}
 	})
@@ -75,4 +78,13 @@ func (m *morning) Start(b *bot.Bot) {
 func (m *morning) Stop(b *bot.Bot, wg *sync.WaitGroup) {
 	// 别忘了解锁
 	defer wg.Done()
+}
+
+func isIgnoredGroup(id int64) bool {
+	for _, groupID := range ignoredGroup {
+		if id == groupID {
+			return true
+		}
+	}
+	return false
 }
