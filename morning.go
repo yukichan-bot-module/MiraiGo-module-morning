@@ -64,7 +64,9 @@ func (m *morning) Serve(b *bot.Bot) {
 
 // Start 此函数会新开携程进行调用
 // ```go
-// 		go exampleModule.Start()
+//
+//	go exampleModule.Start()
+//
 // ```
 // 可以利用此部分进行后台操作
 // 如 http 服务器等等
